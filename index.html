@@ -12,6 +12,9 @@
 		<div class = "stat-holder">
 			<button id="start">START</button>
 			<button id="pause">PAUSE</button>
+			<div>
+				<button id="stop">STOP</button>
+			</div>
 		</div>
 
 		<div class= "stat-holder">
@@ -25,114 +28,119 @@
 		<div class="stat-holder">
 			<div id="incorrect">Incorrect: 0</div>
 		</div>
+
+		<div class="stat-holder">
+			<button id="help">?</button>
+		</div>
 	</div>
 
 	<div id='right-content'>
 		<table id='boardView'>
 			<tbody>
 				<tr class='row-0'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 				<tr class='row-1'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 				<tr class='row-2'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 				<tr class='row-3'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 				<tr class='row-4'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 				<tr class='row-5'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 				<tr class='row-6'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 				<tr class='row-7'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 				<tr class='row-8'>
-					<td class='tile-0'></td>
-					<td class='tile-1'></td>
-					<td class='tile-2'></td>
-					<td class='tile-3'></td>
-					<td class='tile-4'></td>
-					<td class='tile-5'></td>
-					<td class='tile-6'></td>
-					<td class='tile-7'></td>
-					<td class='tile-8'></td>
+					<td class='col-0'></td>
+					<td class='col-1'></td>
+					<td class='col-2'></td>
+					<td class='col-3'></td>
+					<td class='col-4'></td>
+					<td class='col-5'></td>
+					<td class='col-6'></td>
+					<td class='col-7'></td>
+					<td class='col-8'></td>
 				</tr>
 			</tbody>
 		</table>
 	</div>
 
+  <script type='text/javascript' src='js/tile.js'></script>
   <script type='text/javascript' src='js/board.js'></script>
   <script type='text/javascript' src='js/view.js'></script>
   <script type='text/javascript' src='js/application.js'></script>
