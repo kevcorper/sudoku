@@ -1,4 +1,13 @@
+body {
+  width: 95%;
+  margin: auto;
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+}
 
+div {
+  text-align: center;
+}
 
 #left-content {
 	position: relative;
@@ -16,16 +25,48 @@
   padding: 0;
 }
 
+
+/*left-content*/
+
+.main-title {
+  font-weight: lighter;
+  margin: 10px;
+  font-size: 50px;
+  border-bottom: 1px solid gray;
+}
+
+.stat-holder {
+  margin: 50px;
+  font-size: 25px;
+}
+
+button {
+  display: inline-block;
+  width: 75px;
+  margin: 15px;
+}
+
+#help {
+  color: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 15px
+}
+
+
+/*right-content*/
+
+
 table {
   border-collapse: separate;
   border-spacing: 0;
-  margin: auto;
+  margin: 10px auto;
 }
 
 td {
   color: black;
   border: 1px solid white;
-  background-color: lightgray;
+  background-color: #cecece;
   width: 68px;
   height: 68px;
   text-align: center;
@@ -33,3 +74,18 @@ td {
   margin: 0;
   padding: 0;
 }
+
+td:hover {
+  background-color: #eee;
+  cursor: pointer;
+}
+
+.col-2, .col-5 {
+	border-right: 6px solid white;
+}
+
+.row-2 td, .row-5 td {
+	border-bottom: 6px solid white;
+}
+
+

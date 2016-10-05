@@ -7,7 +7,31 @@
 </head>
 <body>
 	<div id='left-content'>
-		<h1>Sudoku</h1>
+		<h1 class="main-title">SUDOKU</h1>
+
+		<div class = "stat-holder">
+			<button id="start">START</button>
+			<button id="pause">PAUSE</button>
+			<div>
+				<button id="stop">STOP</button>
+			</div>
+		</div>
+
+		<div class= "stat-holder">
+			<div id="timer">0:00</div>
+		</div>
+
+		<div class="stat-holder">
+			<div id="point-counter">Points: 0</div>
+		</div>
+
+		<div class="stat-holder">
+			<div id="incorrect">Incorrect: 0</div>
+		</div>
+
+		<div class="stat-holder">
+			<button id="help">?</button>
+		</div>
 	</div>
 
 	<div id='right-content'>
@@ -116,6 +140,7 @@
 		</table>
 	</div>
 
+  <script type='text/javascript' src='js/tile.js'></script>
   <script type='text/javascript' src='js/board.js'></script>
   <script type='text/javascript' src='js/view.js'></script>
   <script type='text/javascript' src='js/application.js'></script>
