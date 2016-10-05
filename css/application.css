@@ -1,4 +1,13 @@
+body {
+  width: 95%;
+  margin: auto;
+  font-family: Helvetica, sans-serif;
+  font-weight: lighter;
+}
 
+div {
+  text-align: center;
+}
 
 #left-content {
 	position: relative;
@@ -16,10 +25,28 @@
   padding: 0;
 }
 
+.main-title {
+  font-weight: lighter;
+  margin: 10px;
+  font-size: 50px;
+  border-bottom: 1px solid gray;
+}
+
+.stat-holder {
+  margin: 50px;
+  font-size: 25px;
+}
+
+button {
+  display: inline-block;
+  width: 100px;
+  margin: 15px;
+}
+
 table {
   border-collapse: separate;
   border-spacing: 0;
-  margin: auto;
+  margin: 10px auto;
 }
 
 td {
@@ -33,3 +60,13 @@ td {
   margin: 0;
   padding: 0;
 }
+
+.tile-2, .tile-5 {
+	border-right: 6px solid white;
+}
+
+.row-2 td, .row-5 td {
+	border-bottom: 6px solid white;
+}
+
+
