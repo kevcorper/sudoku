@@ -14,9 +14,9 @@ $(document).ready(function() {
     var col  = $target.attr('class').slice(-1);
     var tile = board.grid[row][col];
 
-    $('body').on('click', function(event) {
-      $('.selected').removeClass('selected');
-    });
+    // $('body').on('click', function(event) {
+    //   $('.selected').removeClass('selected');
+    // });
 
     $('#nums a').on('click', function(event) {
       var $target = $(event.target);
@@ -36,3 +36,4 @@ $(document).ready(function() {
   });
 
 });
+
