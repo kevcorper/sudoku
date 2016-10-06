@@ -56,11 +56,29 @@ button {
 
 /*right-content*/
 
+#nums {
+  display: inline-block;
+  margin-top: 5%;
+}
+
+#nums a {
+  display: block;
+  font-size: 45px;
+  text-decoration: none;
+  margin: 10px 0;
+  color: gray;
+  height: 50px;
+  width: 50px;
+  border-radius: 10px;
+  background-color: #eee;
+}
 
 table {
   border-collapse: separate;
   border-spacing: 0;
-  margin: 10px auto;
+  display: inline-block;
+  float: right;
+  margin: 1% 1% 0 0;
 }
 
 td {
@@ -80,6 +98,10 @@ td:hover {
   cursor: pointer;
 }
 
+.selected {
+  background-color: #eee;
+}
+
 .col-2, .col-5 {
 	border-right: 6px solid white;
 }
@@ -87,5 +109,4 @@ td:hover {
 .row-2 td, .row-5 td {
 	border-bottom: 6px solid white;
 }
-
 

@@ -3,28 +3,37 @@ $(document).ready(function() {
   var boardView = new BoardView();
   var board = new Board();
   board.createBoard();
-  boardView.renderBoard(board.createStarter());
+  boardView.renderBoard(board.grid);
 
-  // $(td).on('click', function(event) {
-  //   var $target = event.target;
+  $('td').on('click', function(event) {
+    var $target = $(event.target);
+    $('.selected').removeClass('selected');
+    $target.addClass('selected');
 
-  //   var row  = $target.parent().attr('class')[-1];
-  //   var col  = $taget.attr('class')[-1];
-  //   var tile = board.grid[row][col];
+    var row  = $target.parent().attr('class').slice(-1);
+    var col  = $target.attr('class').slice(-1);
+    var tile = board.grid[row][col];
 
-  //   $(td).on('keyup', function(event) {
-  //     var input = String.fromCharCode(event.keyCode)
+    // $('body').on('click', function(event) {
+    //   $('.selected').removeClass('selected');
+    // });
 
-  //     if(tile.isCorrect(input)) {
-  //       boardView.revealNumber(input, row, col);
-  //     } else {
-  //       boardView.revealX(row, col);
-  //     }
+    $('#nums a').on('click', function(event) {
+      var $target = $(event.target);
+      var input   = $target.text();
 
-  //     if (boardView.isFull()) {
-  //       boardView.finish();
-  //     }
-  //   });
-  // });
+      if(tile.isCorrect(input)) {
+        boardView.revealNumber(input, row, col);
+      } else {
+        boardView.revealX(row, col);
+      }
+
+      if (boardView.isFull()) {
+        boardView.finish();
+      }
+    });
+
+  });
 
 });
+
