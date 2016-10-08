@@ -3,6 +3,7 @@ body {
   margin: auto;
   font-family: Helvetica, sans-serif;
   font-weight: lighter;
+  background-color: white;
 }
 
 div {
@@ -96,6 +97,11 @@ td {
 td:hover {
   background-color: #eee;
   cursor: pointer;
+}
+
+.full:hover {
+  background-color: #cecece;
+  cursor: default;
 }
 
 .selected {
