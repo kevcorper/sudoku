@@ -4,6 +4,7 @@ $(document).ready(function() {
   var board = new Board();
   board.createBoard();
   boardView.renderBoard(board.grid);
+  $('#point-counter').text(board.isCorrect())
 
   $(window).click(function(e) {
     var $target     = $(event.target);
