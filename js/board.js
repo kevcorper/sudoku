@@ -1,34 +1,31 @@
+function shuffle(a) {
+    for (let i = a.length; i; i--) {
+        let j = Math.floor(Math.random() * i);
+        [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+}
+
 var Board = function() {
-  this.grid = 
-  [[1, 2, 3, 4, 5, 6, 7, 8, 9],
-  [4, 5, 6, 7, 8, 9, 1, 2, 3],
-  [7, 8, 9, 1, 2, 3, 4, 5, 6],
-  [2, 3, 4, 5, 6, 7, 8, 9, 1],
-  [5, 6, 7, 8, 9, 1, 2, 3, 4],
-  [8, 9, 1, 2, 3, 4, 5, 6, 7],
-  [3, 4, 5, 6, 7, 8, 9, 1, 2],
-  [6, 7, 8, 9, 1, 2, 3, 4, 5],
-  [9, 1, 2, 3, 4, 5, 6, 7, 8]];
-
-  this.range = [1,2,3,4,5,6,7,8,9];
+  this.grid = [
+  [0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0]
+  ];
 }
 
-Array.prototype.equals = function (array) {
-  if (!array)
-    return false;
-  if (this.length != array.length)
-    return false;
-  for (var i = 0; i < array.length; i++) {
-    if (this[i] != array[i]) { 
-      return false;   
-    }           
-  }       
+Board.prototype.noDuplicates = function(line, num) {
+  for (var i = 0; i < line.length; i++) {
+    if (line[i] == num) {
+        return false;
+    }
+  }
   return true;
-}
-
-Board.prototype.lineIsCorrect = function(line) {
-  var sorted = line.slice().sort();
-  return sorted.equals(this.range);
 }
 
 Board.prototype.createColumn = function(col) {
@@ -39,10 +36,10 @@ Board.prototype.createColumn = function(col) {
   return vertical;
 }
 
-Board.prototype.createBox = function(box) {
+Board.prototype.createBox = function(col,row) {
   var box = [];
-  var rowStart = (box/3 * 3);
-  var colStart = (box % 3 * 3);
+  var rowStart = Math.floor(row / 3) * 3;
+  var colStart = Math.floor(col / 3) * 3;
 
   for (var row = rowStart; row < (rowStart+3); row++) {
     for (var col = (colStart); col < (colStart+3); col++) {
@@ -52,20 +49,51 @@ Board.prototype.createBox = function(box) {
   return box;
 }
 
-Board.prototype.indexIsCorrect = function(idx) {
-  return this.lineIsCorrect(this.grid[idx]) 
-  && this.lineIsCorrect(this.createColumn(idx)) 
-  && this.lineIsCorrect(this.createBox(idx));
+Board.prototype.numIsPlausible = function(row, col, num) {
+  return this.noDuplicates(this.grid[row], num) 
+  && this.noDuplicates(this.createColumn(col), num) 
+  && this.noDuplicates(this.createBox(col,row), num);
 }
 
-Board.prototype.isCorrect = function() {
-  for (var i = 0; i < 9; i++) {
-    if (!this.indexIsCorrect(i)) {
-      return false;
+Board.prototype.firstEmptySlot = function() {
+  for (var row = 0; row < 9; row++) {
+    for (var col = 0; col < 9; col++) {
+      if (this.grid[row][col] == 0) {
+        return [row,col];
+      }
     }
   }
-  return true;
+  return [-1,-1];
 }
 
-Board.prototype.createBoard = function() {  
+Board.prototype.createBoard = function() { 
+  var cell = this.firstEmptySlot();
+  var row = cell[0];
+  var col = cell[1];
+
+  if (row == -1) {
+    return true;
+  }
+
+  var range = [1,2,3,4,5,6,7,8,9];
+  shuffle(range);
+
+  for (var i = 0; i < 9; i++) {
+    var num = range[i];
+
+    if (this.numIsPlausible(row, col, num)) {   
+      this.grid[row][col] = num;
+      if (this.createBoard()) {                
+        return true;
+      }
+      this.grid[row][col] = 0;
+    }
+  }
+  return false;
+}
+
+Board.prototype.pretty = function() {
+  for (var i = 0; i < 9; i++) {
+    console.log(this.grid[i]);
+  }
 }

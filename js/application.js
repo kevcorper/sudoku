@@ -4,13 +4,15 @@ $(document).ready(function() {
   var board = new Board();
   board.createBoard();
   boardView.renderBoard(board.grid);
-  $('#point-counter').text(board.isCorrect())
+  // $('#point-counter').text(board.isCorrect())
 
   $(window).click(function(e) {
     var $target     = $(event.target);
     var isTile      = $target.hasClass('tile');
     var tileIsEmpty = $target.text() === '';
-    if (isTile && tileIsEmpty) {
+    if ($target.hasClass('selected')) {
+      $target.removeClass('selected');
+    } else if (isTile && tileIsEmpty) {
       $('.selected').removeClass('selected');
       $target.addClass('selected');
 
