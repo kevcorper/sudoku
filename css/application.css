@@ -62,7 +62,7 @@ button {
   margin-top: 5%;
 }
 
-#nums a {
+.num {
   display: block;
   font-size: 45px;
   text-decoration: none;
@@ -72,6 +72,10 @@ button {
   width: 50px;
   border-radius: 10px;
   background-color: #eee;
+}
+
+.num:hover {
+  color: black;
 }
 
 table {
@@ -92,20 +96,29 @@ td {
   font-size: 40px;
   margin: 0;
   padding: 0;
+  -webkit-transition: all 0.25s ease; 
+  -moz-transition: all 0.25s ease; 
+  -o-transition: all 0.25s ease; 
+  -ms-transition: all 0.25s ease; 
+  transition: all 0.25s ease;
 }
 
-td:hover {
+td:not(.selected):hover {
   background-color: #eee;
   cursor: pointer;
 }
 
-.full:hover {
+td.full:hover {
   background-color: #cecece;
   cursor: default;
 }
 
+.selected:hover {
+  cursor: pointer;
+}
+
 .selected {
-  background-color: #eee;
+  background-color: #b7ebb8;
 }
 
 .col-2, .col-5 {
