@@ -37,14 +37,19 @@ div {
 }
 
 .stat-holder {
-  margin: 50px;
+  margin: 50px 0;
   font-size: 25px;
+}
+
+.level-button {
+  width: 80px;
+  border-radius: 50%;
+  display: inline;
 }
 
 button {
   display: inline-block;
   width: 75px;
-  margin: 15px;
 }
 
 #help {
@@ -119,6 +124,10 @@ td.full:hover {
 
 .selected {
   background-color: #b7ebb8;
+}
+
+.given {
+  color: #777;
 }
 
 .col-2, .col-5 {
