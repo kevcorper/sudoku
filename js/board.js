@@ -5,6 +5,8 @@ function shuffle(a) {
     }
 }
 
+//-------------------------------------------//
+
 var Board = function() {
   this.grid = [
   [0,0,0,0,0,0,0,0,0],
@@ -19,7 +21,7 @@ var Board = function() {
   ];
 }
 
-Board.prototype.noDuplicates = function(line, num) {
+Board.prototype.hasNoDuplicates = function(line, num) {
   for (var i = 0; i < line.length; i++) {
     if (line[i] == num) {
         return false;
@@ -50,9 +52,9 @@ Board.prototype.createBox = function(col,row) {
 }
 
 Board.prototype.numIsPlausible = function(row, col, num) {
-  return this.noDuplicates(this.grid[row], num) 
-  && this.noDuplicates(this.createColumn(col), num) 
-  && this.noDuplicates(this.createBox(col,row), num);
+  return this.hasNoDuplicates(this.grid[row], num) 
+  && this.hasNoDuplicates(this.createColumn(col), num) 
+  && this.hasNoDuplicates(this.createBox(col,row), num);
 }
 
 Board.prototype.firstEmptySlot = function() {
