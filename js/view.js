@@ -29,14 +29,6 @@ BoardView.prototype.renderBoard = function(grid, level) {
 	}
 }
 
-BoardView.prototype.revealNumber = function(input, row, col) {
-}
-
-BoardView.prototype.revealX = function(row, col) {
-}
-
 BoardView.prototype.isFull = function() {
-}
-
-BoardView.prototype.finish = function() {
+	return $('.full') == 81;
 }
