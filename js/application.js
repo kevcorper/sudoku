@@ -10,7 +10,7 @@ $(document).ready(function() {
 
     var $target     = $(event.target);
     var isTile      = $target.hasClass('tile');
-    var tileIsEmpty = $target.text() === '';
+    var tileIsEmpty = !($target.hasClass('full'));
 
     if ($target.hasClass('play-button')) {
         $target.removeClass('play-button');
@@ -29,19 +29,31 @@ $(document).ready(function() {
         $target.html('&#9658;');
     } else if ($target.hasClass('selected')) {
         $target.removeClass('selected');
+        $('.note-tile').removeClass('note-tile');
     } else if (isTile && tileIsEmpty) {
         $('.selected').removeClass('selected');
+        $('.note-tile').removeClass('note-tile');
         $target.addClass('selected');
 
         var row  = $target.parent().attr('class').slice(-1);
         var col  = $target.attr('class')[9];
         tile = board.grid[row][col];
-    } else if ($('.selected') && $target.hasClass('num')) {
+    } else if ($('.note-tile').length == 1 && $target.hasClass('num')) {
+        var input    = $target.text();
+        var notes    = $('.note-tile').text();
+        var numIndex = notes.indexOf(input);
+
+        if (numIndex == -1) {
+          $('.note-tile .notes').text(notes + input + ' ');
+        } else {
+          $('.note-tile .notes').text(notes.replace(input + ' ', ''));
+        }  
+    } else if ($('.selected').length == 1 && $target.hasClass('num')) {
         var input = $target.text();
 
         if(tile == input) {
           $('.selected').removeClass('incorrect');
-          $('.selected').text(input);
+          $('.selected').html(input);
           $('.selected').addClass('full');
           points+=1;
           $('#points').text(points);
@@ -60,7 +72,14 @@ $(document).ready(function() {
         }      
     } else {
         $('.selected').removeClass('selected');
+        $('.note-tile').removeClass('note-tile');
     }
+
+    $( ".tile" ).dblclick(function(e) {
+      $('.note-tile').removeClass('note-tile');
+      $target = $(event.target);
+      $target.addClass('note-tile');
+    });
   });
 
 });

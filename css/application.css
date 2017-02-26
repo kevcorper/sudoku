@@ -154,6 +154,13 @@ td.full:hover {
   cursor: default;
 }
 
+.notes {
+  display: inline;
+  font-size: 12px;
+  width: 100%;
+  padding: 5px;
+}
+
 .selected:hover {
   cursor: pointer;
 }
@@ -164,6 +171,14 @@ td.full:hover {
 
 .selected {
   background-color: #96ec83;
+}
+
+.note-tile {
+  background-color: #ecca83;
+}
+
+.note-tile:hover {
+  background-color: #ecca83 !important; 
 }
 
 .given {
