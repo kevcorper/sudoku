@@ -9,34 +9,53 @@ $(document).ready(function() {
   $(window).click(function(e) {
 
     var $target     = $(event.target);
-    var isTile      = $target.hasClass('tile');
+    var isTile      = $target.hasClass('tile') || $target.hasClass('notes');
     var tileIsEmpty = !($target.hasClass('full'));
 
     if ($target.hasClass('play-button')) {
         $target.removeClass('play-button');
         $target.addClass('pause-button');
         $target.html('&#10073;&#10073;');
+        $('#right-content').css('pointer-events', 'auto');
 
         if (board.grid[0][0] == 0) {
           board.createBoard();
-          boardView.renderBoard(board.grid);
-        } else {
-          return;
+          boardView.renderBoard(board.grid, $('.selected-level').attr('id'));
         }
+
+        $('.tile, .notes').css('color', 'black');
+        $('.given').css('color', '#777');
+        $('.level-button').css('pointer-events', 'none');
     } else if ($target.hasClass('pause-button')) {
         $target.removeClass('pause-button');
         $target.addClass('play-button');
         $target.html('&#9658;');
+        $('.tile, .notes').css('color', '#cecece');
+        $('#right-content').css('pointer-events', 'none');
+    } else if ($target.hasClass('level-button')) {
+        $('.selected-level').removeClass('selected-level');
+        $target.addClass('selected-level');
     } else if ($target.hasClass('selected')) {
         $target.removeClass('selected');
         $('.note-tile').removeClass('note-tile');
     } else if (isTile && tileIsEmpty) {
         $('.selected').removeClass('selected');
         $('.note-tile').removeClass('note-tile');
-        $target.addClass('selected');
 
-        var row  = $target.parent().attr('class').slice(-1);
-        var col  = $target.attr('class')[9];
+        var row = 0;
+        var col = 0;
+
+        if ($target.hasClass('notes')) {
+          var parent = $target.parent();
+          parent.addClass('selected');
+          row  = parent.parent().attr('class').slice(-1);
+          col  = parent.attr('class')[9];
+        } else {
+          $target.addClass('selected');
+          row  = $target.parent().attr('class').slice(-1);
+          col  = $target.attr('class')[9];
+        }
+
         tile = board.grid[row][col];
     } else if ($('.note-tile').length == 1 && $target.hasClass('num')) {
         var input    = $target.text();
@@ -58,7 +77,9 @@ $(document).ready(function() {
           points+=1;
           $('#points').text(points);
         } else {
-          $('.selected').addClass('incorrect');
+          $('.selected').addClass('incorrect').delay(500).queue(function(){
+              $(this).removeClass("incorrect").dequeue();
+          });
           incorrect+=1;
           points-=1;
           $('#points').text(points);
@@ -75,10 +96,15 @@ $(document).ready(function() {
         $('.note-tile').removeClass('note-tile');
     }
 
-    $( ".tile" ).dblclick(function(e) {
+    $(".tile").dblclick(function(e) {
       $('.note-tile').removeClass('note-tile');
       $target = $(event.target);
-      $target.addClass('note-tile');
+
+      if ($target.hasClass('notes')) {
+        $target.parent().addClass('note-tile');
+      } else {
+        $target.addClass('note-tile');
+      }
     });
   });
 
