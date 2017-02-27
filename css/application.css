@@ -1,3 +1,12 @@
+* {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 body {
   width: 95%;
   margin: auto;
@@ -24,6 +33,7 @@ div {
   width: 64%;
   margin: 0;
   padding: 0;
+  pointer-events: none;
 }
 
 /*left-content*/
@@ -46,6 +56,15 @@ div {
   border-radius: 50%;
   display: inline;
   color: white;
+  opacity: .3;
+}
+
+.level-button:hover {
+  opacity: 1;
+}
+
+.selected-level {
+  opacity: 1;
 }
 
 #easy {
@@ -154,6 +173,13 @@ td.full:hover {
   cursor: default;
 }
 
+.notes {
+  display: inline;
+  font-size: 12px;
+  width: 100%;
+  padding: 5px;
+}
+
 .selected:hover {
   cursor: pointer;
 }
@@ -164,6 +190,14 @@ td.full:hover {
 
 .selected {
   background-color: #96ec83;
+}
+
+.note-tile {
+  background-color: #ecca83;
+}
+
+.note-tile:hover {
+  background-color: #ecca83 !important; 
 }
 
 .given {

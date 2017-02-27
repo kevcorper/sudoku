@@ -30,5 +30,5 @@ BoardView.prototype.renderBoard = function(grid, level) {
 }
 
 BoardView.prototype.isFull = function() {
-	return $('.full') == 81;
+	return $('.full').length == 81;
 }

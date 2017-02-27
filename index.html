@@ -10,7 +10,7 @@
 		<h1 class="main-title">SUDOKU</h1>
 
 		<div class = "stat-holder">
-			<button id="easy" class="level-button">Easy</button>
+			<button id="easy" class="level-button selected-level">Easy</button>
 			<button id="medium" class="level-button">Medium</button>
 			<button id="hard" class="level-button">Hard</button>
 		</div>
@@ -24,7 +24,7 @@
 		</div>
 
 		<div class="stat-holder">
-			<div class="point-counter">Points: <span id='points'>0</span></div>
+			<div class="point-counter">Score: <span id='points'>0</span></div>
 		</div>
 
 		<div class="stat-holder">
@@ -51,103 +51,103 @@
 		<table id='boardView'>
 			<tbody>
 				<tr class='row-0'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 				<tr class='row-1'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 				<tr class='row-2'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 				<tr class='row-3'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 				<tr class='row-4'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 				<tr class='row-5'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 				<tr class='row-6'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 				<tr class='row-7'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 				<tr class='row-8'>
-					<td class='tile col-0'></td>
-					<td class='tile col-1'></td>
-					<td class='tile col-2'></td>
-					<td class='tile col-3'></td>
-					<td class='tile col-4'></td>
-					<td class='tile col-5'></td>
-					<td class='tile col-6'></td>
-					<td class='tile col-7'></td>
-					<td class='tile col-8'></td>
+					<td class='tile col-0'><div class='notes'></div></td>
+					<td class='tile col-1'><div class='notes'></div></td>
+					<td class='tile col-2'><div class='notes'></div></td>
+					<td class='tile col-3'><div class='notes'></div></td>
+					<td class='tile col-4'><div class='notes'></div></td>
+					<td class='tile col-5'><div class='notes'></div></td>
+					<td class='tile col-6'><div class='notes'></div></td>
+					<td class='tile col-7'><div class='notes'></div></td>
+					<td class='tile col-8'><div class='notes'></div></td>
 				</tr>
 			</tbody>
 		</table>
