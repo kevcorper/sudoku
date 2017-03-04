@@ -2,9 +2,38 @@ $(document).ready(function() {
 
   var boardView = new BoardView();
   var board     = new Board();
-  var tile      = null;
+
   var points    = 0;
   var incorrect = 0;
+
+  var tile
+
+  var seconds = 0, minutes = 0, hours = 0; 
+  var secs, mins, hrs; 
+  var timerStarted = false;
+  var isPaused = false;
+
+  var startTime = function() {
+    if (!isPaused) {
+      if ( seconds === 60 ) {seconds = 0; minutes++;}
+
+      if ( minutes < 10 ) {mins = '0' + minutes + ' : ';} 
+      else {mins = minutes + ': ';}
+
+      if ( minutes === 60 ) {minutes = 0; hours++;} 
+
+      if (hours < 10) {hrs = '0' + hours + ' : ';} 
+      else {hrs = hours + ': ';}
+
+      if (seconds < 10) {secs = '0' + seconds;} 
+      else {secs = seconds}
+
+      $('#timer').text(hrs + mins + secs); 
+
+      seconds++; 
+    }
+  }
+
 
   $(window).click(function(e) {
 
@@ -26,12 +55,21 @@ $(document).ready(function() {
         $('.tile, .notes').css('color', 'black');
         $('.given').css('color', '#777');
         $('.level-button').css('pointer-events', 'none');
+
+        if (!timerStarted) {
+          setInterval(function() {startTime();}, 1000);
+          timerStarted = true;
+        }
+
+        isPaused = false;
     } else if ($target.hasClass('pause-button')) {
         $target.removeClass('pause-button');
         $target.addClass('play-button');
         $target.html('&#9658;');
         $('.tile, .notes').css('color', '#cecece');
         $('#right-content').css('pointer-events', 'none');
+
+        isPaused = true;
     } else if ($target.hasClass('level-button')) {
         $('.selected-level').removeClass('selected-level');
         $target.addClass('selected-level');
