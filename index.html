@@ -6,6 +6,17 @@
 	<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js'></script>
 </head>
 <body>
+
+	<div class="overlay" style="display: none;">
+		<div class="overlay-content">
+			<p>Welcome to Sudoku!  If you are new to this kind of puzzle, it's actually super easy...let me explain.  You see a 9x9 grid separated into 9 3x3 blocks, right?  The objective of the game is to fill every row, column and box with the numbers 1-9.  Simple as that; the rest is up to you!</p>
+			<p>As for gameplay, single click on an empty tile you would like to fill and you will see it turn green.  Green means you are ready to solve that tile, just click on a number to submit it.  The tile will fill if correct and flash red if incorrect.</p>
+			<p>There is also a note taking option.  Double click the tile you want to add notes to and it will turn orange.  While orange, you can fill a tile with possible options as a reminder.</p>
+			<p>Have fun!</p>
+			<div class="overlay-button button close">close</div>
+		</div>
+	</div>
+
 	<div id='left-content'>
 		<h1 class="main-title">SUDOKU</h1>
 
@@ -47,109 +58,107 @@
 		  <a class="num" href='#'>8</a>
 		  <a class="num" href='#'>9</a>
 		</div>
-		<table id='boardView'>
-			<tbody>
-				<tr class='row-0'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-				<tr class='row-1'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-				<tr class='row-2'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-				<tr class='row-3'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-				<tr class='row-4'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-				<tr class='row-5'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-				<tr class='row-6'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-				<tr class='row-7'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-				<tr class='row-8'>
-					<td class='tile col-0'><div class='notes'></div></td>
-					<td class='tile col-1'><div class='notes'></div></td>
-					<td class='tile col-2'><div class='notes'></div></td>
-					<td class='tile col-3'><div class='notes'></div></td>
-					<td class='tile col-4'><div class='notes'></div></td>
-					<td class='tile col-5'><div class='notes'></div></td>
-					<td class='tile col-6'><div class='notes'></div></td>
-					<td class='tile col-7'><div class='notes'></div></td>
-					<td class='tile col-8'><div class='notes'></div></td>
-				</tr>
-			</tbody>
-		</table>
+		<div id='boardView'>
+				<div class='row row-0'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+				<div class='row row-1'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+				<div class='row row-2'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+				<div class='row row-3'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+				<div class='row row-4'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+				<div class='row row-5'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+				<div class='row row-6'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+				<div class='row row-7'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+				<div class='row row-8'>
+					<div class='tile col-0'><span class='notes'></span></div>
+					<div class='tile col-1'><span class='notes'></span></div>
+					<div class='tile col-2'><span class='notes'></span></div>
+					<div class='tile col-3'><span class='notes'></span></div>
+					<div class='tile col-4'><span class='notes'></span></div>
+					<div class='tile col-5'><span class='notes'></span></div>
+					<div class='tile col-6'><span class='notes'></span></div>
+					<div class='tile col-7'><span class='notes'></span></div>
+					<div class='tile col-8'><span class='notes'></span></div>
+				</div>
+		</div>
 	</div>
 
   <script type='text/javascript' src='js/board.js'></script>
